@@ -52,8 +52,10 @@ const INITIAL_CLIENTS: AdminClient[] = [
   },
 ];
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://app-backendgerenciadorsite.qeqzxb.easypanel.host/api";
+
 export default function AdminDashboardPage() {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const [clients, setClients] = useState<AdminClient[]>(INITIAL_CLIENTS);
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");

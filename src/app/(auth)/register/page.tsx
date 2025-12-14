@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || 'https://app-backendgerenciadorsite.qeqzxb.easypanel.host/api';
+
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,7 +14,7 @@ export default function RegisterPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+      const res = await fetch(`${API_BASE_URL}/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
