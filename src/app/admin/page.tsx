@@ -71,6 +71,18 @@ export default function AdminDashboardPage() {
   const [editingDueDateValue, setEditingDueDateValue] = useState("");
   const [overview, setOverview] = useState<AdminOverview | null>(null);
 
+  // protege o acesso ao /admin: apenas usuarios autenticados e com papel ADMIN
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const token = localStorage.getItem("auth_token");
+    const role = localStorage.getItem("auth_role");
+
+    if (!token || role !== "ADMIN") {
+      window.location.href = "/admin/login";
+    }
+  }, []);
+
   const totalClients = clients.length;
   const activeSites = clients.filter((c) => c.status === "ativo").length;
   const blockedSites = clients.filter((c) => c.status === "bloqueado").length;

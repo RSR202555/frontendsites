@@ -40,6 +40,9 @@ export default function AdminLoginPage() {
         localStorage.setItem("auth_token", data.token);
       }
 
+      // guarda o papel do usuario para proteger o acesso ao /admin
+      localStorage.setItem("auth_role", "ADMIN");
+
       if (data.user) {
         if (data.user.name) {
           localStorage.setItem("auth_user_name", String(data.user.name));
