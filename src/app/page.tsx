@@ -12,7 +12,7 @@ export default function HomePage() {
 
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-10 pt-6 sm:px-6 lg:px-8">
         {/* HEADER */}
-        <header className="mb-6 flex items-center justify-between gap-4 border-b border-white/5 pb-4">
+        <header className="mb-6 flex flex-col gap-4 border-b border-white/5 pb-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Logo e brand */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
@@ -28,8 +28,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Navegação central (desktop) */}
-          <nav className="hidden items-center gap-6 text-xs text-slate-300 md:flex">
+          {/* Navegação */}
+          <nav className="flex flex-wrap items-center gap-4 text-xs text-slate-300">
             <Link
               href="/login"
               className="text-[0.75rem] font-medium text-slate-200 transition hover:text-cyan-300"
@@ -108,7 +108,7 @@ export default function HomePage() {
             {/* Coluna esquerda: mensagem principal e CTAs */}
             <div className="flex-1 max-w-2xl">
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-                Tudo do seu site
+                Tudo do seu site{' '}
                 <br className="hidden sm:block" />
                 <span className="bg-gradient-to-r from-cyan-400 via-emerald-400 to-sky-400 bg-clip-text text-transparent">
                   em um só lugar.
