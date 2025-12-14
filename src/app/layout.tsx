@@ -2,8 +2,8 @@ import './globals.css';
 import type { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Gerenciamento de Sites - SaaS',
-  description: 'Plataforma SaaS para gerenciamento de sites com cobrança recorrente',
+  title: 'RSRDEV SUPORTE',
+  description: 'Suporte e painel de clientes RSRDEV para gerenciamento de sites e assinaturas.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
